@@ -1,9 +1,14 @@
 <h1>Show my task</h1>
-<p><%= @task.title %></p>
-<p><%= @task.details %></p>
+<%= link_to "Edit",
+  edit_task_path(@task)
+%>
+<div class="details_container">
+<p>Title: <%= @task.title %></p>
+<p>Details: <%= @task.details %></p>
+</div>
 <%= link_to "Delete",
-  task_path(@task),
+  task_path,
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
 
-<a href="/tasks">Back to list</a>
+<div class="back-btn"><i class="fa-solid fa-arrow-left"></i><a href="/tasks"> Back to list</a></div>

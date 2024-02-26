@@ -3,10 +3,12 @@
 <%= form_with model: @task do |f| %>
 <% @tasks.each do |task| %>
 <li>
-<a href="<%= task_path(task) %>">
   <%= f.check_box :completed %>
+<a href="<%= task_path(task) %>">
   <%= f.label task.title %></a>
   </li>
   <% end %>
 <% end %>
 </ul>
+
+<div class="new-btn"><i class="fa-solid fa-plus"></i><a href="/tasks/new">Add task</a></div>
